@@ -20,6 +20,7 @@ public abstract class BaseDAO<T>{
             session.beginTransaction();
             session.saveOrUpdate(element);
             session.getTransaction().commit();
+            System.out.println("ya tout bon !");
             return element;
         }catch (Exception e){
             session.getTransaction().rollback();
@@ -33,6 +34,7 @@ public abstract class BaseDAO<T>{
         session = sessionFactory.openSession();
         T element  = session.get(tClass,id);
         session.close();
+        System.out.println("ya tout bon !");
         return element;
     }
 
@@ -44,6 +46,7 @@ public abstract class BaseDAO<T>{
                 session.beginTransaction();
                 session.delete(element);
                 session.getTransaction().commit();
+                System.out.println("ya tout bon !");
                 return true;
             }
             return false;
@@ -63,6 +66,7 @@ public abstract class BaseDAO<T>{
             System.out.println("aleeeeeeeerte : " + e.getMessage());
             return null;
         } finally {
+            System.out.println("ya tout bon !");
             if (session != null) {
                 session.close();
             }

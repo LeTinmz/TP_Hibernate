@@ -5,10 +5,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
-import org.example.Utils.ClothesSize;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.time.LocalDate;
 
 @Entity
 @Setter
@@ -16,7 +16,7 @@ import javax.persistence.Table;
 @NoArgsConstructor
 @AllArgsConstructor
 @SuperBuilder
-@Table(name="clothes")
-public class Clothes extends Article{
-    private ClothesSize clothesSize;
+@Table(name="Food")
+public class Food extends Article {
+    private LocalDate expiryDate;
 }

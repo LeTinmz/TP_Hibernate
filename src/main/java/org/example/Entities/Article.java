@@ -13,7 +13,6 @@ import java.time.LocalDate;
 @SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
-
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public abstract class Article {
     @Id

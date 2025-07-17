@@ -12,6 +12,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Table(name="client")
 public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
