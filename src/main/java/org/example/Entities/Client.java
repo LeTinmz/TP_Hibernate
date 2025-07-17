@@ -14,7 +14,7 @@ import java.util.List;
 @Entity
 public class Client {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     @Column
     private String firstName;
@@ -22,6 +22,6 @@ public class Client {
     private String lastName;
     @Column
     private String email;
-    @Column
+    @OneToMany(mappedBy = "client", cascade = CascadeType.ALL)
     private List<Sale> sales;
 }

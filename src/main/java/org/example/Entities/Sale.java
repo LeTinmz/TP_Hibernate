@@ -15,13 +15,17 @@ import java.util.List;
 @Entity
 public class Sale {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    @Column(nullable = false)
+    @ManyToOne
+    @JoinColumn(name="client_id")
     private Client client;
     @Column(nullable = false)
     private LocalDate date;
-    @Column
+    @ManyToMany(cascade = CascadeType.PERSIST)
+    @JoinTable(name = "sale_article",
+            joinColumns = @JoinColumn(name = "sale_id"),
+            inverseJoinColumns = @JoinColumn(name = "article_id"))
     private List<Article> content;
     @Column
     private SaleStatusEnum saleStatus;

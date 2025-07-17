@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
+import org.example.Utils.ClothesSize;
 
 import javax.persistence.Entity;
 
@@ -15,5 +16,5 @@ import javax.persistence.Entity;
 @AllArgsConstructor
 @SuperBuilder
 public class Clothes extends Article{
-    private
+    private ClothesSize clothesSize;
 }
