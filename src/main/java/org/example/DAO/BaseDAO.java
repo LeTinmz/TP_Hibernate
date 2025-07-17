@@ -30,7 +30,7 @@ public abstract class BaseDAO<T>{
         }
     }
 
-    public T get (long id){
+    public T get (int id){
         session = sessionFactory.openSession();
         T element  = session.get(tClass,id);
         session.close();
@@ -38,7 +38,7 @@ public abstract class BaseDAO<T>{
         return element;
     }
 
-    public boolean delete (long id){
+    public boolean delete (int id){
         try{
             T element = get(id);
             if(element != null){

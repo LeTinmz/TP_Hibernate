@@ -16,7 +16,7 @@ import java.util.List;
 public class Sale {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private int id;
     @ManyToOne
     @JoinColumn(name="client_id")
     private Client client;

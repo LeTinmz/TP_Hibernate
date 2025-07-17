@@ -19,6 +19,7 @@ public class AnalysisService {
     public List<Sale> getSalesByArticleId(int articleId) {
         List<Sale> sales = saleDAO.get();
         List<Sale> salesOfGivenArticle = new ArrayList<>();
+
         for(Sale sale : sales) {
             for(Article article : sale.getContent()){
                 if(article.getId() == articleId){
